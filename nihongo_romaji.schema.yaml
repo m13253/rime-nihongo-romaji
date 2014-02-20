@@ -46,19 +46,25 @@ speller:
     - fuzz/^NN$/N/
     - derive/^[bcdfghjkmpqrstvwyz]$/xtsu/
     - derive/^[bcdfghjkmpqrstvwyz]$/xtu/
+    - derive/^[bcdfghjkmpqrstvwyz]$/ltsu/
+    - derive/^[bcdfghjkmpqrstvwyz]$/ltu/
     - derive/^[BCDFGHJKMPQRSTVWYZ]$/XTSU/
     - derive/^[BCDFGHJKMPQRSTVWYZ]$/XTU/
+    - derive/^[BCDFGHJKMPQRSTVWYZ]$/LTSU/
+    - derive/^[BCDFGHJKMPQRSTVWYZ]$/LTU/
     - derive/^shi$/si/
     - derive/^shi$/ci/
     - derive/^ci$/ti/
     - derive/^tsu$/tu/
     - derive/^xtsu$/xtu/
+    - derive/^xtsu$/ltu/
     - derive/^l/x/
     - derive/^SHI$/SI/
     - derive/^SHI$/CI/
     - derive/^CI$/TI/
     - derive/^TSU$/TU/
     - derive/^XTSU$/XTU/
+    - derive/^XTSU$/LTU/
     - derive/^L/X/
 
 translator:
