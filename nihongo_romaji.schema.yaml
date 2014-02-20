@@ -1,0 +1,89 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: nihongo_romaji
+  name: 日本語ローマ字
+  version: "0.1"
+  author:
+    - StarBrilliant <m13253@hotmail.com>
+  description: |
+    日本語ローマ字入力
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 英数, かな ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator
+    - punct_translator
+    - r10n_translator
+
+speller:
+  alphabet: "zyxwvutsrqonmlkjihgfedcbaZYXWVUTSRQONMLKJIHGFEDCBA-~/,."
+  delimiter: " '"
+  algebra:
+    - fuzz/^nn$/n/
+    - fuzz/^NN$/N/
+    - derive/^[bcdfghjkmpqrstvwyz]$/xtsu/
+    - derive/^[bcdfghjkmpqrstvwyz]$/xtu/
+    - derive/^[BCDFGHJKMPQRSTVWYZ]$/XTSU/
+    - derive/^[BCDFGHJKMPQRSTVWYZ]$/XTU/
+    - derive/^shi$/si/
+    - derive/^shi$/ci/
+    - derive/^ci$/ti/
+    - derive/^tsu$/tu/
+    - derive/^xtsu$/xtu/
+    - derive/^l/x/
+    - derive/^SHI$/SI/
+    - derive/^SHI$/CI/
+    - derive/^CI$/TI/
+    - derive/^TSU$/TU/
+    - derive/^XTSU$/XTU/
+    - derive/^L/X/
+
+translator:
+  dictionary: nihongo_romaji
+  enable_sentence: true
+
+punctuator:
+  import_preset: default
+  full_shape:
+    " " : { commit: "　" }
+    "\\" : [ ￥ ]
+    "$" : [ ＄ ]
+  half_shape:
+    "\\" : [ ¥ ]
+    "$" : [ $ ]
+
+key_binder:
+  import_preset: default
+  bindings:
+    - { when: has_menu, accept: comma, send: comma }
+    - { when: has_menu, accept: period, send: period }
+    - { when: has_menu, accept: minus, send: minus }
+    - { when: has_menu, accept: equal, send: equal }
+    - { when: has_menu, accept: space, send: Down }
+    - { when: has_menu, accept: Return, send: space }
+
+recognizer:
+  import_preset: default
