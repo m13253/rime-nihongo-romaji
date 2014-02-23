@@ -4,6 +4,9 @@ Rime IME Japanese romaji input engine schema
 How to apply the schema to your Rime IME:
   https://code.google.com/p/rimeime/wiki/UserGuide
 
-Tip: This repository is huge. If you want to clone it, adding --depth 1 to the
-  git clone command is sometimes a good idea.
+Tips:
+  This repository is huge. If you want to clone it, adding --depth 1 to the
+    'git clone' command is sometimes a good idea.
+  The 50MiB Mozc phrase dictionary is attached. You will have to wait for ten
+    minutes when deploying such a huge dictionary.
 
