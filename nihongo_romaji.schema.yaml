@@ -268,9 +268,11 @@ punctuator:
   import_preset: default
   full_shape:
     " " : { commit: "　" }
+    "," : [ "、", "，" ]
     "\\" : [ ￥ ]
     "$" : [ ＄ ]
   half_shape:
+    "," : [ "、", "，" ]
     "\\" : [ ¥ ]
     "$" : [ $ ]
 
